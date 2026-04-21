@@ -1,0 +1,138 @@
+openapi: 3.0.3
+info:
+  title: TMD Management Backend API
+  version: 1.0.0
+  description: Production-ready API for authentication, pain tracking, exercises, CBT, mood, appointments, and analytics.
+servers:
+  - url: http://localhost:3000
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+security:
+  - bearerAuth: []
+paths:
+  /health:
+    get:
+      summary: Health check
+      responses:
+        '200':
+          description: OK
+  /api/auth/register:
+    post:
+      summary: Register user
+  /api/auth/login:
+    post:
+      summary: Login user
+  /api/auth/refresh-token:
+    post:
+      summary: Refresh token
+  /api/auth/logout:
+    post:
+      summary: Logout
+  /api/auth/forgot-password:
+    post:
+      summary: Forgot password
+  /api/auth/reset-password:
+    post:
+      summary: Reset password
+  /api/auth/verify-email:
+    post:
+      summary: Verify email
+  /api/users/profile:
+    get:
+      summary: Get profile
+    put:
+      summary: Update profile
+  /api/users/preferences:
+    get:
+      summary: Get preferences
+    put:
+      summary: Update preferences
+  /api/pain:
+    post:
+      summary: Create pain record
+    get:
+      summary: List pain records
+  /api/pain/{id}:
+    get:
+      summary: Get pain record
+    put:
+      summary: Update pain record
+    delete:
+      summary: Delete pain record
+  /api/pain/analytics/summary:
+    get:
+      summary: Pain summary
+  /api/pain/analytics/trends:
+    get:
+      summary: Pain trends
+  /api/exercises:
+    get:
+      summary: Get exercises
+  /api/exercises/{id}:
+    get:
+      summary: Get exercise details
+  /api/exercises/complete:
+    post:
+      summary: Log completion
+  /api/exercises/progress:
+    get:
+      summary: Exercise progress
+  /api/exercises/recommended:
+    get:
+      summary: Recommended exercises
+  /api/cbt/modules:
+    get:
+      summary: List modules
+  /api/cbt/modules/{id}:
+    get:
+      summary: Module detail
+  /api/cbt/progress:
+    post:
+      summary: Save progress
+    get:
+      summary: Get progress
+  /api/mood:
+    post:
+      summary: Log mood
+    get:
+      summary: Mood history
+  /api/mood/analytics:
+    get:
+      summary: Mood analytics
+  /api/appointments:
+    post:
+      summary: Create appointment
+    get:
+      summary: List appointments
+  /api/appointments/{id}:
+    get:
+      summary: Get appointment
+    put:
+      summary: Update appointment
+    delete:
+      summary: Cancel appointment
+  /api/appointments/{id}/reminder:
+    post:
+      summary: Set reminder
+  /api/analytics/dashboard:
+    get:
+      summary: Dashboard summary
+  /api/analytics/pain-trends:
+    get:
+      summary: Detailed pain analysis
+  /api/analytics/exercise-stats:
+    get:
+      summary: Exercise stats
+  /api/analytics/mood-correlation:
+    get:
+      summary: Mood/pain correlation
+  /api/analytics/report:
+    get:
+      summary: Full report
+  /api/analytics/export:
+    post:
+      summary: Export data
