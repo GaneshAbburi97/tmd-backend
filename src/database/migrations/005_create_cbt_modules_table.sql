@@ -13,8 +13,8 @@ CREATE TABLE IF NOT EXISTS cbt_modules (
 
 CREATE TABLE IF NOT EXISTS cbt_progress (
   id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-  user_id UUID NOT NULL REFERENCES users(id),
-  module_id UUID NOT NULL REFERENCES cbt_modules(id),
+  user_id UUID NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  module_id UUID NOT NULL REFERENCES cbt_modules(id) ON DELETE CASCADE,
   completed BOOLEAN NOT NULL DEFAULT FALSE,
   completed_at TIMESTAMPTZ,
   created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
