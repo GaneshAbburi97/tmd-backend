@@ -6,7 +6,7 @@
   "type": "commonjs",
   "scripts": {
     "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
-    "build": "tsc -p tsconfig.json",
+    "build": "tsc -p tsconfig.json && cp -r src/docs dist/docs",
     "start": "node dist/server.js",
     "test": "jest --runInBand --coverage",
     "test:watch": "jest --watch",
@@ -17,13 +17,7 @@
     "type": "git",
     "url": "git+https://github.com/GaneshAbburi97/tmd-backend.git"
   },
-  "keywords": [
-    "express",
-    "typescript",
-    "postgres",
-    "jwt",
-    "tmd"
-  ],
+  "keywords": ["express", "typescript", "postgres", "jwt", "tmd"],
   "author": "",
   "license": "ISC",
   "bugs": {
@@ -31,7 +25,7 @@
   },
   "homepage": "https://github.com/GaneshAbburi97/tmd-backend#readme",
   "dependencies": {
-    "bcrypt": "^6.0.0",
+    "bcrypt": "^5.1.1",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.6",
     "dotenv": "^17.4.2",
@@ -50,22 +44,22 @@
     "yamljs": "^0.3.0"
   },
   "devDependencies": {
-    "@types/bcrypt": "^6.0.0",
+    "@types/bcrypt": "^5.0.2",
     "@types/cookie-parser": "^1.4.10",
     "@types/cors": "^2.8.19",
     "@types/express": "^4.17.23",
-    "@types/jest": "^30.0.0",
+    "@types/jest": "^29.5.14",
     "@types/jsonwebtoken": "^9.0.10",
-    "@types/node": "^25.6.0",
-    "@types/supertest": "^7.2.0",
+    "@types/node": "^20.0.0",
+    "@types/supertest": "^6.0.2",
     "@types/swagger-ui-express": "^4.1.8",
     "@types/yamljs": "^0.2.34",
-    "jest": "^30.3.0",
+    "jest": "^29.7.0",
     "supertest": "^7.2.2",
     "ts-jest": "^29.4.9",
     "ts-node": "^10.9.2",
     "ts-node-dev": "^2.0.0",
-    "typescript": "^6.0.3"
+    "typescript": "~5.5.4"
   },
   "overrides": {
     "path-to-regexp": "0.1.13",
